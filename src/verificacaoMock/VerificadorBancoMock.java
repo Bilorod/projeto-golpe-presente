@@ -1,4 +1,5 @@
-package verificacao;
+package verificacaoMock;
+
 
 // Verifica se o banco emissor é confiável (simulação)
 public class VerificadorBancoMock implements VerificadorDeBoleto {

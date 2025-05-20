@@ -1,4 +1,4 @@
-package verificacao;
+package verificacaoMock;
 
 // Interface que define o contrato para qualquer verificador de boletos
 public interface VerificadorDeBoleto {
