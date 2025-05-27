@@ -1,21 +1,17 @@
 package com.projetogolpe.backend.controller;
 
 import com.projetogolpe.backend.dto.DenunciaDTO;
-import com.projetogolpe.backend.service.DenunciaService;
+import com.projetogolpe.backend.service.VerificacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-
+@RequestMapping("/api")
 
 public class DenunciaController {
 
     @Autowired
-    private DenunciaService denunciaService;
+    private VerificacaoService verificacaoService;
 
     @GetMapping("/ping")
     public String ping() {
@@ -25,7 +21,7 @@ public class DenunciaController {
 
     @PostMapping("/denunciar")
     public String denunciarGolpe(@RequestBody DenunciaDTO dto){
-        boolean valido = denunciaService.processarDenuncia(dto);
+        boolean valido = verificacaoService.processarDenuncia(dto);
         if(valido){
             return "Denúncia registrada: boleto válido";
         } else{

@@ -4,7 +4,7 @@ package com.projetogolpe.backend.verificacao;
 public class VerificadorBancoMock implements VerificadorDeBoleto {
     @Override
     public boolean verificar(String codigoDeBarras) {
-        System.out.println("[Mock] Verificando banco emissor...");
+        System.out.println("Verificando banco emissor...");
         return true; // Simulando que o banco é confiável
     }
 
