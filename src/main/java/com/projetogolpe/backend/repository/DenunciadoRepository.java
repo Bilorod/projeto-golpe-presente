@@ -6,4 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DenunciadoRepository extends JpaRepository<Denunciado, Long> {
+    boolean existsByCodigobarras(String codigobarras);
+    boolean existsByCpfCnpj(String cpfCnpj);
+
 }
+

@@ -2,8 +2,8 @@ package com.projetogolpe.backend.repository;
 
 import com.projetogolpe.backend.model.Banco;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
-@Repository
 public interface BancoRepository extends JpaRepository<Banco, String> {
+    Optional<Banco> findByNomeBanco(String nomeBanco);
 }
