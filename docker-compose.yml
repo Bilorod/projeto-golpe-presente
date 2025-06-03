@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: golpe-mysql       # renomeamos para "golpe-mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=Golpe
+    ports:
+      - "3307:3306"
+    networks:
+      - rede
+
+  app:
+    build: .
+    container_name: golpe-backend     # renomeamos para "golpe-backend"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - rede
+
+networks:
+  rede:
