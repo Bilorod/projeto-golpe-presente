@@ -1,4 +1,4 @@
-package verificacaoMock;
+package verificacao;
 
 public class VerificacaoMockPrincipal {
     public static void main(String[] args) {

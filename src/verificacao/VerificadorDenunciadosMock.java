@@ -1,4 +1,4 @@
-package verificacaoMock;
+package verificacao;
 
 public class VerificadorDenunciadosMock implements VerificadorDeBoleto {
     @Override

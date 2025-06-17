@@ -1,4 +1,4 @@
-package verificacaoMock;
+package verificacao;
 
 
 // Verifica se o banco emissor é confiável (simulação)
