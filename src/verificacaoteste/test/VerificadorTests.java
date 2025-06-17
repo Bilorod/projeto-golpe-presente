@@ -1,7 +1,7 @@
-package verificacao.test;
+package verificacaoteste.test;
 
-import verificacao.model.Boleto;
-import verificacao.service.VerificadorService;
+import verificacaoteste.model.Boleto;
+import verificacaoteste.service.VerificadorService;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;

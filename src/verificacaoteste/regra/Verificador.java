@@ -1,6 +1,6 @@
-package verificacao.regra;
+package verificacaoteste.regra;
 
-import verificacao.model.Boleto;
+import verificacaoteste.model.Boleto;
 
 public interface Verificador {
     boolean verificar(Boleto boleto);

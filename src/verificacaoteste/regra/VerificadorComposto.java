@@ -1,6 +1,6 @@
-package verificacao.regra;
+package verificacaoteste.regra;
 
-import verificacao.model.Boleto;
+import verificacaoteste.model.Boleto;
 import java.util.List;
 
 public class VerificadorComposto implements Verificador {

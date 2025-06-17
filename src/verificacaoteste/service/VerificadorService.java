@@ -1,7 +1,7 @@
-package verificacao.service;
+package verificacaoteste.service;
 
-import verificacao.model.Boleto;
-import verificacao.regra.*;
+import verificacaoteste.model.Boleto;
+import verificacaoteste.regra.*;
 
 import java.util.List;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package verificacao.model;
+package verificacaoteste.model;
 
 public class Boleto {
     private String codigoDeBarras;
