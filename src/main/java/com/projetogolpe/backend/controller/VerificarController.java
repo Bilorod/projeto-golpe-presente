@@ -30,7 +30,7 @@ public class VerificarController {
         // logo no começo do método, antes do try {
         if (verificacaoService.isDestinatarioDenunciado(dto.getDestinatario())) {
             return ResponseEntity.ok(
-                    "Boleto falso: inconsistência detectada, destinatário já denunciado por emissão de boletos falsos"
+                    "Inconsistência detectada. \n" + "Destinatário já denunciado por emissão de boletos falsos"
             );
         }
 
@@ -55,12 +55,13 @@ public class VerificarController {
 
             if (valido) {
                 String msg =
-                        "Boleto sem nenhuma inconsistência detectada\n"
+                        "Boleto sem nenhuma inconsistência.\n"
                                 + "Valor: R$ "    + valorFormatado + "\n"
                                 + "Destinatário: " + dto.getDestinatario() + "\n";
                 return ResponseEntity.ok(msg);
             } else {
-                return ResponseEntity.ok("Boleto falso: inconsistência detectada código de barras \n " +
+                return ResponseEntity.ok("Boleto falso.\n" +
+                        "Inconsistência detectada, código de barras \n " +
                         "não bate com o banco informado ");
             }
 

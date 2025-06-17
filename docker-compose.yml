@@ -1,26 +1,41 @@
-version: '3.8'
+version: "3.8"
 
 services:
   mysql:
-    image: mysql:8
-    container_name: golpe-mysql       # renomeamos para "golpe-mysql"
+    image: mysql:8.0
+    restart: always
+    container_name: golpe-mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=Golpe
-    ports:
-      - "3307:3306"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Golpe
+    volumes:
+      - mysql-data:/var/lib/mysql
     networks:
       - rede
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -proot"]
+      interval: 10s
+      retries: 5
 
   app:
-    build: .
-    container_name: golpe-backend     # renomeamos para "golpe-backend"
-    ports:
-      - "8080:8080"
+    image: verificadoracr.azurecr.io/verificador:latest
+    restart: always
+    container_name: golpe-backend
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_URL: "jdbc:mysql://mysql:3306/Golpe?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC"
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "80:8080"
     networks:
       - rede
 
 networks:
   rede:
+
+volumes:
+  mysql-data:
+    driver: azure_file
