@@ -66,10 +66,4 @@ Durante o desenvolvimento, a API foi testada manualmente com diferentes cenário
 - Gustavo Trigolo  
 - Guilherme Guedes  
 - Mauricio Walazak  
-
----
-
-
-## 👨‍💻 Autor
-
-**Gustavo Cardoso dos Santos**  
+ 
